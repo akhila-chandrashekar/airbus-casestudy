@@ -34,6 +34,48 @@ pipeline {
           }
         }
 
+        stage('Email Service') {
+          steps {
+            dir(path: 'source/email-service') {
+              sh 'pwd'
+              sh 'docker build -t $EMAIL_SERVICE_IMAGE:latest -t $EMAIL_SERVICE_IMAGE:$BUILD_NUMBER .'
+              sh 'docker tag $EMAIL_SERVICE_IMAGE:latest $ECR_ID/$EMAIL_SERVICE_IMAGE:latest'
+              sh 'docker login --username $ECR_CREDENTIALS_USR --password $ECR_CREDENTIALS_PSW $ECR_ID'
+              sh 'docker image prune -f'
+              sh 'docker push $ECR_ID/$EMAIL_SERVICE_IMAGE:latest'
+            }
+
+          }
+        }
+
+        stage('Identity Verification Service') {
+          steps {
+            dir(path: 'source/identity-verification-service') {
+              sh 'pwd'
+              sh 'docker build -t $IDENTITY_VERIFICATION_SERVICE_IMAGE:latest -t $IDENTITY_VERIFICATION_SERVICE_IMAGE:$BUILD_NUMBER .'
+              sh 'docker tag $IDENTITY_VERIFICATION_SERVICE_IMAGE:latest $ECR_ID/$IDENTITY_VERIFICATION_SERVICE_IMAGE:latest'
+              sh 'docker login --username $ECR_CREDENTIALS_USR --password $ECR_CREDENTIALS_PSW $ECR_ID'
+              sh 'docker image prune -f'
+              sh 'docker push $ECR_ID/$IDENTITY_VERIFICATION_SERVICE_IMAGE:latest'
+            }
+
+          }
+        }
+
+        stage('Credit Card Service') {
+          steps {
+            dir(path: 'source/creditcard-service') {
+              sh 'pwd'
+              sh 'docker build -t $CREDITCARD_SERVICE_IMAGE:latest -t $CREDITCARD_SERVICE_IMAGE:$BUILD_NUMBER .'
+              sh 'docker tag $CREDITCARD_SERVICE_IMAGE:latest $ECR_ID/$CREDITCARD_SERVICE_IMAGE:latest'
+              sh 'docker login --username $ECR_CREDENTIALS_USR --password $ECR_CREDENTIALS_PSW $ECR_ID'
+              sh 'docker image prune -f'
+              sh 'docker push $ECR_ID/$CREDITCARD_SERVICE_IMAGE:latest'
+            }
+
+          }
+        }
+
       }
     }
 
