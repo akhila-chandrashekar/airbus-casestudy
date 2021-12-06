@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Build and Deploy Docker Image to ECR') {
       steps {
+        sh 'cd source/calculation-offer-service/CalculationServiceAPISolution'
         sh 'pwd'
         sh 'docker build -t $CALCULATION_SERVICE_IMAGE:latest -t $CALCULATION_SERVICE_IMAGE:$BUILD_NUMBER .'
         sh 'docker tag $CALCULATION_SERVICE_IMAGE:latest $ECR_ID/$CALCULATION_SERVICE_IMAGE:latest'
