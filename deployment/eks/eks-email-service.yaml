@@ -21,8 +21,8 @@ metadata:
     env: staging
     businessUnit: emailService
 data:
-  AWS_ACCESS_KEY: QUtJQVNDRzVUREROV1UzUUFCN0U=
-  AWS_ACCESS_SECRET_KEY: bmtrYU4wMW9MenZpYjBDT2NWenozQnFzK3YyVFNDNUJjeVFnU1lVSA==
+  AWS_ACCESS_KEY: QUtJQVNDRzVUREROV0ZTS1ZPSDU=
+  AWS_ACCESS_SECRET_KEY: WEJFNmpSOFYzMWFSM0ZpT0YvVzhKWk83UFYwelRFUmE2QXZDSHdpQw==
   
 --- 
 
@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
       - name: casestudy-emailservice-container
-        image: 142198642907.dkr.ecr.ap-south-1.amazonaws.com/ram-casestudy-emailservice
+        image: 142198642907.dkr.ecr.ap-northeast-1.amazonaws.com/akhila-v2-casestudy-emailservice
         env:
         - name: CLOUDAMQP_URL
           valueFrom:
