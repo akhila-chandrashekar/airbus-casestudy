@@ -11,7 +11,7 @@ data:
   CALCULATION_SERVICE_URL: http://casestudy-calcandofferservice-service:8080/api/calculation-services/process
   VERIFICATION_INPUTS_QUEUE: verification-inputs-queue
   EMAIL_REQUESTS_QUEUE: email-requests-queue
-  FROM_EMAIL_ADDRESS: jd.ramkumar@gmail.com
+  FROM_EMAIL_ADDRESS: akhila.chandrashekar24@gmail.com
   FLASK_DEBUG: "true"
   FLASK_ENV: "development"
   FLASK_RUN_PORT: "80"
