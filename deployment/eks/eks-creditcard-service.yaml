@@ -52,7 +52,7 @@ spec:
     spec:
       containers:
       - name: casestudy-creditcard-service-container
-        image: 142198642907.dkr.ecr.ap-south-1.amazonaws.com/ram-casestudy-creditcard-service
+        image: 142198642907.dkr.ecr.ap-northeast-1.amazonaws.com/akhila-v2-casestudy-creditcard-service
         ports:
         - containerPort: 80
         env:
