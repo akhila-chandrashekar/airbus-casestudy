@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
       - name: casestudy-emailservice-container
-        image: 142198642907.dkr.ecr.ap-northeast-1.amazonaws.com/akhila-v2-casestudy-emailservice
+        image: 142198642907.dkr.ecr.ap-northeast-1.amazonaws.com/akhila-v2-casestudy-email-service
         env:
         - name: CLOUDAMQP_URL
           valueFrom:
