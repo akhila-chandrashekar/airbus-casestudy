@@ -45,7 +45,7 @@ spec:
     spec:
       containers:
       - name: casestudy-identity-verification-response-service-container
-        image: 142198642907.dkr.ecr.ap-northeast-1.amazonaws.com/akhila-v2-casestudy-identity-verification-deamon
+        image: 142198642907.dkr.ecr.ap-northeast-1.amazonaws.com/akhila-v2-casestudy-creditcard-identity-verification-response-daemon
         env:
         - name: CLOUDAMQP_URL
           valueFrom:
